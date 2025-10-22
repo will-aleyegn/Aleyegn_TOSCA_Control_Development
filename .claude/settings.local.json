@@ -39,7 +39,16 @@
       "Bash(git push:*)",
       "Bash(git pull:*)",
       "Bash(git log:*)",
-      "mcp__github__get_file_contents"
+      "mcp__github__get_file_contents",
+      "Bash(venv\\Scripts\\python.exe -m pip:*)",
+      "Bash(\"venv/Scripts/python.exe\" -m pip install --upgrade pip setuptools wheel)",
+      "Bash(\"venv/Scripts/python.exe\" -m pip install -r requirements.txt)",
+      "Bash(timeout 30 cmd:*)",
+      "Bash(\"venv/Scripts/python.exe\":*)",
+      "Bash(\"venv/Scripts/python.exe\" -m pip install pre-commit)",
+      "Bash(\"venv/Scripts/pre-commit.exe\" install)",
+      "WebFetch(domain:github.com)",
+      "Bash(\"venv/Scripts/python.exe\" -m pip install vmbpy)"
     ],
     "deny": [
       "Read(./.env*)",
