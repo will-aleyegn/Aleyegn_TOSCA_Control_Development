@@ -1,15 +1,16 @@
 """
 Single Frame Capture Script
 
-Captures a single frame from the camera and saves it as a NumPy array and image file.
+Captures a single frame from the camera and saves it with a timestamp.
 
 Usage:
     python 03_capture_single_frame.py [camera_id] [output_filename]
 
-Default output: camera_module/output/captured_frame.png
+Default output: camera_module/output/captured_frame_YYYY-MM-DD_HH-MM-SS.png
 """
 
 import sys
+from datetime import datetime
 from pathlib import Path
 
 import numpy as np
@@ -78,7 +79,8 @@ if __name__ == "__main__":
         script_dir = Path(__file__).parent
         output_dir = script_dir.parent / "output"
         output_dir.mkdir(exist_ok=True)
-        output_file = str(output_dir / "captured_frame.png")
+        timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        output_file = str(output_dir / f"captured_frame_{timestamp}.png")
 
     try:
         capture_frame(camera_id, output_file)
