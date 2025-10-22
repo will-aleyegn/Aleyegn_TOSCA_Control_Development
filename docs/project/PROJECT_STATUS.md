@@ -1,8 +1,8 @@
 # TOSCA Project Status & AI Onboarding
 
-**Last Updated:** 2025-10-22
-**Current Phase:** Camera Module Exploration
-**Project Status:** Planning → Initial Setup → Camera Testing
+**Last Updated:** 2025-10-22 22:35
+**Current Phase:** GUI Development - Phase 1 Complete
+**Project Status:** Initial Setup ✓ → Camera Module ✓ → GUI Shell ✓ → HAL Integration (Next)
 
 ---
 
@@ -63,33 +63,47 @@
 TOSCA-dev/
 ├── .github/                           # GitHub config
 │   └── PULL_REQUEST_TEMPLATE.md
-├── camera_module/                     # Camera exploration (CURRENT WORK)
-│   ├── README.md
+├── camera_module/                     # Camera exploration ✓ COMPLETE
+│   ├── README.md                      # VmbPy API docs (500+ lines)
+│   ├── INTEGRATION_FEATURES.md        # Integration spec (736 lines)
+│   ├── LESSONS_LEARNED.md             # API quirks documented
 │   ├── examples/
 │   │   ├── 01_list_cameras.py        # ✓ Working
 │   │   ├── 02_camera_info.py         # ✓ Working
 │   │   ├── 03_capture_single_frame.py # ✓ Working
-│   │   ├── 04_explore_features.py    # ⚠ Needs debugging
-│   │   └── 05_continuous_stream.py   # Not tested yet
-│   ├── output/                        # Test images (git-ignored)
-│   └── docs/
+│   │   ├── 04_explore_features.py    # ✓ Fixed (223/313 features)
+│   │   ├── 05_continuous_stream.py   # ✓ Working (39.4 FPS)
+│   │   └── 06_set_auto_exposure.py   # ✓ Working
+│   └── output/                        # Test images (git-ignored)
 ├── docs/
 │   ├── architecture/                  # Complete architecture docs
+│   ├── project/                       # Project management docs
+│   │   ├── WORK_LOG.md               # Current session log
+│   │   ├── PROJECT_STATUS.md         # This file
+│   │   ├── CODING_STANDARDS.md       # Development rules
+│   │   ├── CONFIGURATION.md          # Config reference
+│   │   └── archive/                  # Archived work logs
 │   └── DEVELOPMENT_ENVIRONMENT_SETUP.md
-├── src/                               # Main application (empty structure)
-│   ├── main.py
+├── src/                               # Main application (CURRENT WORK)
+│   ├── main.py                        # ✓ PyQt6 launcher
+│   ├── ui/                            # ✓ GUI shell complete
+│   │   ├── main_window.py            # 4-tab layout
+│   │   └── widgets/
+│   │       ├── patient_widget.py     # Patient selection
+│   │       ├── camera_widget.py      # Camera display
+│   │       ├── treatment_widget.py   # Treatment controls
+│   │       └── safety_widget.py      # Safety interlocks
 │   ├── config/
 │   ├── core/
 │   ├── database/
-│   ├── hardware/
+│   ├── hardware/                      # Next: HAL implementation
 │   ├── image_processing/
-│   ├── ui/
 │   └── utils/
 ├── tests/                             # Test structure created
 ├── data/                              # Git-ignored
+│   └── logs/                          # Application logs
 ├── venv/                              # Virtual environment
-├── CODING_STANDARDS.md                # ⚠ CRITICAL - READ FIRST
-├── PROJECT_STATUS.md                  # ⚠ THIS FILE - Keep updated
+├── NEW_SESSION_GUIDE.md               # ⚠ START HERE for new sessions
 ├── README.md
 ├── requirements.txt
 └── setup.py
@@ -124,20 +138,24 @@ TOSCA-dev/
 - [x] `DEVELOPMENT_ENVIRONMENT_SETUP.md` - Complete setup guide
 - [x] Architecture docs in `docs/architecture/`
 
-### ✓ Camera Module (Current)
+### ✓ Camera Module (Complete)
 
 **Allied Vision Camera Integration:**
 - [x] VmbPy library installed (v1.1.1)
 - [x] Camera module directory structure created
 - [x] Camera detected: Allied Vision 1800 U-158c (USB)
 - [x] Specifications documented: 1456x1088, RGB8, USB interface
+- [x] All 6 test scripts passing
+- [x] API quirks documented in LESSONS_LEARNED.md
+- [x] Integration specification complete (736 lines)
 
-**Test Scripts Created:**
-- [x] `01_list_cameras.py` - Camera detection ✓ Tested
-- [x] `02_camera_info.py` - Camera details ✓ Tested
-- [x] `03_capture_single_frame.py` - Frame capture ✓ Tested
-- [x] `04_explore_features.py` - Feature exploration ⚠ Needs fix
-- [x] `05_continuous_stream.py` - Streaming test (not tested)
+**Test Scripts - All Working:**
+- [x] `01_list_cameras.py` - Camera detection ✓
+- [x] `02_camera_info.py` - Camera details ✓
+- [x] `03_capture_single_frame.py` - Frame capture with timestamps ✓
+- [x] `04_explore_features.py` - Feature exploration (223/313 features) ✓
+- [x] `05_continuous_stream.py` - Streaming (39.4 FPS) ✓
+- [x] `06_set_auto_exposure.py` - Auto exposure control ✓
 
 **Camera Test Results:**
 ```
@@ -145,68 +163,103 @@ Camera ID: DEV_1AB22C04E780
 Model: Allied Vision 1800 U-158c
 Resolution: 1456 x 1088 pixels
 Format: RGB8 (3 channels)
-Exposure: ~5ms
+Exposure: 5ms (manual) or auto-adjust
+Frame Rate: 39.4 FPS sustained
+Features: 223 of 313 readable
 Interface: USB
-Status: Working ✓
+Status: Fully validated ✓
 ```
+
+### ✓ GUI Shell - Phase 1 (Complete)
+
+**PyQt6 Main Window:**
+- [x] 4-tab layout created (Patient, Camera, Treatment, Safety)
+- [x] Status bar with hardware connection indicators
+- [x] Main window with proper title and sizing (1400x900)
+- [x] Logging integration for all UI actions
+
+**Widget Components:**
+- [x] PatientWidget - Patient ID search, session initiation
+- [x] CameraWidget - Camera feed placeholder (800x600), controls
+- [x] TreatmentWidget - Laser power (0-2000mW), ring size (0-3000µm)
+- [x] SafetyWidget - Hardware/software interlocks, E-stop button
+
+**Technical Quality:**
+- [x] All methods type annotated (mypy compliant)
+- [x] Pre-commit hooks passing (black, flake8, isort, mypy)
+- [x] Follows CODING_STANDARDS.md minimal approach
+- [x] GUI launches and renders correctly
+
+**Status:** Ready for HAL integration ✓
 
 ---
 
 ## Known Issues
 
-1. **Camera Feature Exploration:**
-   - Script `04_explore_features.py` finds 313 features but reads 0
-   - Features exist but not being accessed correctly
-   - Need to debug feature reading logic
+**None** - All current modules tested and working
 
-2. **Streaming Test:**
-   - Script `05_continuous_stream.py` created but not tested
-   - Need to verify frame rate and callback functionality
+**Previously Resolved:**
+1. ✓ Camera feature exploration (VmbPy British spelling issue)
+2. ✓ Streaming callback signature (3 params required)
+3. ✓ Path-independent file operations (using Path(__file__))
 
 ---
 
 ## Current Work Session Summary
 
-**What we just did:**
-1. Created camera exploration module structure
-2. Installed VmbPy library
-3. Wrote 5 test scripts for camera operations
-4. Successfully tested camera detection, info, and frame capture
-5. Documented VmbPy API in `camera_module/README.md`
-6. Added output directory for test images
-7. Updated `.gitignore` to prevent repository littering
+**Session Date:** 2025-10-22
+**Total Actions:** 26 major steps completed
+**Duration:** ~4 hours
+
+**Completed This Session:**
+1. ✓ Camera module exploration (Actions 1-25)
+   - 6 test scripts created and validated
+   - API quirks documented
+   - Integration specification written (736 lines)
+   - All tests passing (39.4 FPS streaming)
+2. ✓ GUI shell Phase 1 (Action 26)
+   - 4-tab PyQt6 interface
+   - Patient, Camera, Treatment, Safety widgets
+   - Status bar with hardware indicators
+   - All type annotations and pre-commit hooks passing
 
 **What's working:**
-- Camera detection and connection
-- Single frame capture (1456x1088x3 arrays)
-- Image saving to `camera_module/output/`
+- Camera: Fully validated with Allied Vision 1800 U-158c
+- GUI: Launches and renders all 4 tabs correctly
+- Code quality: All pre-commit hooks passing
+- Documentation: Work log system with archival
 
-**What needs attention:**
-- Feature exploration script debugging
-- Streaming test execution
-- Feature documentation for TOSCA integration
+**Current State:**
+- Camera module: ✓ Complete
+- GUI shell: ✓ Phase 1 complete
+- HAL layer: ⏳ Ready to start
+- Integration: ⏳ Next step
 
 ---
 
 ## Next Immediate Tasks
 
-**Priority 1: Complete Camera Module Testing**
-1. Debug `04_explore_features.py` to properly read camera features
-2. Test `05_continuous_stream.py` for frame rate verification
-3. Document key camera features needed for TOSCA (exposure, gain, trigger)
-4. Create feature documentation file
+**Priority 1: Hardware Abstraction Layer (Phase 2)**
+1. Create `src/hardware/` directory structure
+2. Implement `src/hardware/camera_controller.py` (based on camera_module/INTEGRATION_FEATURES.md)
+3. Implement `src/hardware/laser_controller.py` stub
+4. Implement `src/hardware/actuator_controller.py` stub
+5. Wire up CameraWidget "Connect Camera" button
+6. Update status bar based on hardware connection state
 
-**Priority 2: Camera Hardware Abstraction**
-1. Create `src/hardware/camera.py` abstraction layer
-2. Implement connection, capture, streaming methods
-3. Add exposure and gain control
-4. Write unit tests
+**Priority 2: Safety System (Phase 3)**
+1. Create `src/core/safety.py` - Safety interlock manager
+2. Implement interlock state tracking
+3. Enable/disable treatment buttons based on safety state
+4. Wire up Emergency Stop button
+5. Implement safety event logging to SafetyWidget
 
-**Priority 3: Actuator Module (Next)**
-1. Create `actuator_module/` similar to camera module
-2. Research Xeryon API
-3. Create test scripts for actuator control
-4. Document API and test results
+**Priority 3: Patient Management (Phase 4)**
+1. Design database schema for patient records
+2. Create `src/database/models.py` with Patient, Session, Treatment tables
+3. Implement patient search functionality
+4. Wire up PatientWidget search button
+5. Implement session start/stop logic
 
 ---
 
@@ -340,13 +393,17 @@ git push origin main
 
 **Latest commits:**
 ```
-5b61058 - Add output directory for test images and update gitignore
-a33e263 - Fix type hint in feature exploration script
-25b883c - Add Allied Vision camera exploration module with VmbPy API
-3737a93 - Configure strict coding standards and quality enforcement
-acb6bd7 - Initialize Python project structure and development environment
-6550878 - Initial commit: TOSCA Medical Laser Control System documentation
+22e192c - Archive camera module work log and clean up WORK_LOG.md
+73722a2 - Update work log with GUI shell completion (Action #26)
+f0faf57 - Create basic GUI shell with PyQt6
+0c29b2e - Create integration feature specification (camera module complete)
+1c24228 - Implement auto exposure control
+1f529e7 - Add timestamps to captured frames
+fb3b569 - Fix capture script path issues (use Path(__file__))
+0f91ef5 - Establish lessons learned system (camera module)
 ```
+
+**Full archive:** See WORK_LOG.md and archive/ for complete history
 
 ---
 
