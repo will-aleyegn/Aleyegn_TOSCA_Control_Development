@@ -22,20 +22,20 @@ def get_feature_info(feature: Any) -> Optional[Tuple[str, str, str, bool]]:
         feature: VmbPy feature object
 
     Returns:
-        Tuple of (name, category, value, is_writable) or None if error
+        Tuple of (name, category, value, is_writeable) or None if error
     """
     try:
         name = feature.get_name()
         category = feature.get_category()
         is_readable = feature.is_readable()
-        is_writable = feature.is_writable()
+        is_writeable = feature.is_writeable()
 
         if is_readable:
             try:
                 value = feature.get()
-                return (name, category, value, is_writable)
+                return (name, category, value, is_writeable)
             except Exception:
-                return (name, category, "N/A", is_writable)
+                return (name, category, "N/A", is_writeable)
     except Exception:
         pass
     return None

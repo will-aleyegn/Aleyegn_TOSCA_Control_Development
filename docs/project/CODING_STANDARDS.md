@@ -161,6 +161,63 @@ Pre-commit hooks will check:
 
 Commits that fail checks will be rejected.
 
+## Lessons Learned Documentation
+
+**CRITICAL PRACTICE**: Every module must maintain a LESSONS_LEARNED.md file.
+
+### Purpose
+Track mistakes, API quirks, and solutions to prevent repeating errors across modules and sessions.
+
+### Location
+Each module directory must have: `<module_name>/LESSONS_LEARNED.md`
+
+Examples:
+- `camera_module/LESSONS_LEARNED.md`
+- `actuator_module/LESSONS_LEARNED.md`
+- `safety_module/LESSONS_LEARNED.md`
+
+### When to Document
+
+Document immediately when you discover:
+1. **API Quirks** - Third-party library behavior that differs from expectations
+2. **Incorrect Assumptions** - Method names, signatures, or behavior you assumed wrong
+3. **Tricky Bugs** - Issues that took significant debugging to resolve
+4. **Integration Issues** - Problems connecting different components
+5. **Tool/Environment Issues** - Problems with dev tools, pre-commit hooks, or dependencies
+
+### Required Format
+
+```markdown
+### Issue #N: Brief Description
+
+**Date:** YYYY-MM-DD
+
+**Problem:**
+Clear description of what went wrong
+
+**Investigation:**
+Steps taken to identify the issue
+
+**Root Cause:**
+Why the problem occurred
+
+**Solution:**
+How it was fixed (with code examples if relevant)
+
+**Files Affected:**
+- List of files that needed changes
+
+**Lesson:**
+Key takeaway to avoid repeating this mistake
+```
+
+### Integration with Development
+
+- Update LESSONS_LEARNED.md BEFORE committing the fix
+- Reference lesson numbers in commit messages when applicable
+- New AI sessions should read LESSONS_LEARNED.md files to avoid repeating mistakes
+- Review lessons learned during code reviews
+
 ## Remember
 
 **This is medical device software. Every line of code can impact patient safety.**

@@ -12,8 +12,26 @@ Default duration: 10 seconds
 
 import sys
 import time
+from typing import Any
 
 import vmbpy
+
+
+class FrameCounter:
+    """Simple counter for frames captured during streaming."""
+
+    def __init__(self) -> None:
+        self.count = 0
+        self.start_time = time.time()
+
+    def increment(self) -> None:
+        """Increment frame count."""
+        self.count += 1
+
+    def get_fps(self) -> float:
+        """Calculate current FPS."""
+        elapsed = time.time() - self.start_time
+        return self.count / elapsed if elapsed > 0 else 0.0
 
 
 def stream_frames(camera_id: str = None, duration: int = 10) -> None:
@@ -40,21 +58,25 @@ def stream_frames(camera_id: str = None, duration: int = 10) -> None:
             print(f"Using camera: {camera.get_id()}")
 
         with camera:
-            frame_count = 0
-            start_time = time.time()
-
+            counter = FrameCounter()
             print(f"\nStreaming for {duration} seconds...")
             print("Press Ctrl+C to stop early.\n")
 
+            def on_frame(cam: Any, stream: Any, frame: Any) -> None:
+                """Frame callback."""
+                counter.increment()
+                cam.queue_frame(frame)
+
             try:
-                camera.start_streaming(lambda cam, stream_stats: on_frame_ready(cam, stream_stats))
+                camera.start_streaming(on_frame)
+                start_time = time.time()
 
                 while time.time() - start_time < duration:
                     time.sleep(0.1)
                     elapsed = time.time() - start_time
-                    if int(elapsed) % 5 == 0 and elapsed > 0:
-                        fps = frame_count / elapsed
-                        print(f"Elapsed: {elapsed:.1f}s, Frames: {frame_count}, FPS: {fps:.2f}")
+                    if int(elapsed) % 2 == 0 and elapsed > 0.1:
+                        fps = counter.get_fps()
+                        print(f"Elapsed: {elapsed:.1f}s, Frames: {counter.count}, FPS: {fps:.2f}")
 
                 camera.stop_streaming()
 
@@ -62,28 +84,13 @@ def stream_frames(camera_id: str = None, duration: int = 10) -> None:
                 print("\nStopping...")
                 camera.stop_streaming()
 
-            elapsed = time.time() - start_time
-            fps = frame_count / elapsed if elapsed > 0 else 0
+            elapsed = time.time() - counter.start_time
+            fps = counter.get_fps()
 
             print("\nCapture Complete:")
             print(f"  Duration:  {elapsed:.2f} seconds")
-            print(f"  Frames:    {frame_count}")
+            print(f"  Frames:    {counter.count}")
             print(f"  Avg FPS:   {fps:.2f}")
-
-
-def on_frame_ready(camera: vmbpy.Camera, stream_stats: vmbpy.StreamStats) -> None:
-    """
-    Callback function called for each captured frame.
-
-    Args:
-        camera: Camera instance
-        stream_stats: Streaming statistics
-    """
-    global frame_count
-    frame_count += 1
-
-
-frame_count = 0
 
 
 if __name__ == "__main__":
