@@ -9,11 +9,12 @@
 
 ### For New AI Sessions
 
-**NEW_SESSION_GUIDE.md** ⭐ START HERE
+**NEW_SESSION_GUIDE.md** ⭐ START HERE (in project root)
 - Exact instructions for user on how to onboard new AI
 - Copy-paste prompt template
 - Step-by-step workflow
 - Read this FIRST if starting a new session
+- **Location:** `../NEW_SESSION_GUIDE.md` (project root for easy access)
 
 **START_HERE.md**
 - Quick start guide for AI instances

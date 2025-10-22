@@ -311,6 +311,8 @@ python src/main.py
 
 ## Documentation
 
+**NEW_SESSION_GUIDE.md** ⭐ - How to onboard new AI instances (START HERE)
+
 **Project Management:** `docs/project/`
 - START_HERE.md - New AI session quick start
 - PROJECT_STATUS.md - Current project state

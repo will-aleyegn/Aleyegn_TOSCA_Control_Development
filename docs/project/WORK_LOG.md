@@ -155,14 +155,26 @@
   - Quick reference to all key files
   - Tips for smooth sessions
 **Updated:** docs/project/README.md to list NEW_SESSION_GUIDE.md first
+**Commit:** e5d6f53
 **Result:** Clear, actionable guide for user to onboard new AI sessions
 **Next:** Commit and continue with camera module work
+
+#### 19. Moved New Session Guide to Root
+**Time:** 17:18
+**What:** Moved NEW_SESSION_GUIDE.md from docs/project/ to project root
+**Command:** `git mv docs/project/NEW_SESSION_GUIDE.md NEW_SESSION_GUIDE.md`
+**Reason:** Easier to find when starting new session (right there in root)
+**Updated:**
+  - docs/project/README.md with new location reference
+  - Main README.md to highlight NEW_SESSION_GUIDE.md at top of Documentation section
+**Result:** NEW_SESSION_GUIDE.md now easily accessible in root directory
+**Next:** Commit changes
 
 ---
 
 ## Session Summary
 
-**Total Actions:** 18 major steps completed
+**Total Actions:** 19 major steps completed
 **Time Span:** ~40 minutes of development work
 **Key Achievements:**
 1. ✓ Camera module created and tested
