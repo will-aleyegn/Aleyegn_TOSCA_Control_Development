@@ -309,9 +309,16 @@ python -m src.database.init_db
 python src/main.py
 ```
 
-## Documentation Index
+## Documentation
 
-All architecture documentation is in `docs/architecture/`:
+**Project Management:** `docs/project/`
+- START_HERE.md - New AI session quick start
+- PROJECT_STATUS.md - Current project state
+- WORK_LOG.md - Real-time session tracking
+- CODING_STANDARDS.md - Development rules
+- CONFIGURATION.md - Config file reference
+
+**Architecture:** `docs/architecture/`
 
 1. **01_system_overview.md** - Start here for complete system architecture
 2. **02_database_schema.md** - Database design and schema
