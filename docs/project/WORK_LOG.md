@@ -126,7 +126,7 @@
 **Next:** Continue camera module work or start actuator module
 
 #### 17. Reorganized Documentation Files
-**Time:** (Current)
+**Time:** 17:10
 **What:** Moved all MD documentation files to docs/project/ directory
 **Files Moved:**
   - START_HERE.md → docs/project/START_HERE.md
@@ -140,14 +140,29 @@
 **Updated:** SESSION_PROMPT.md with corrected file paths
 **Command:** `git commit -m "Reorganize documentation files to docs/project/"`
 **Result:** SUCCESS - Documentation reorganized, committed, and pushed to GitHub
-**Commit:** edc2d44
+**Commits:** edc2d44, 951cf48
 **Next:** Continue with camera module work or start actuator module
+
+#### 18. Created New Session Guide
+**Time:** 17:15
+**What:** Created NEW_SESSION_GUIDE.md with exact instructions for onboarding new AI instances
+**Purpose:** Give user clear copy-paste prompt and workflow for starting new sessions
+**Content:**
+  - Step 1: Exact copy-paste prompt template
+  - Step 2: What to expect from AI response
+  - Step 3: How to give direction
+  - Alternative approach if auto-read doesn't work
+  - Quick reference to all key files
+  - Tips for smooth sessions
+**Updated:** docs/project/README.md to list NEW_SESSION_GUIDE.md first
+**Result:** Clear, actionable guide for user to onboard new AI sessions
+**Next:** Commit and continue with camera module work
 
 ---
 
 ## Session Summary
 
-**Total Actions:** 17 major steps completed
+**Total Actions:** 18 major steps completed
 **Time Span:** ~40 minutes of development work
 **Key Achievements:**
 1. ✓ Camera module created and tested

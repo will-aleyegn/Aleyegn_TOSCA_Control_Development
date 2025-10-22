@@ -9,13 +9,19 @@
 
 ### For New AI Sessions
 
+**NEW_SESSION_GUIDE.md** ⭐ START HERE
+- Exact instructions for user on how to onboard new AI
+- Copy-paste prompt template
+- Step-by-step workflow
+- Read this FIRST if starting a new session
+
 **START_HERE.md**
-- Quick start guide for new AI sessions
+- Quick start guide for AI instances
 - 5-step process to get up to speed
-- Read this FIRST
+- AI reads this after being onboarded
 
 **SESSION_PROMPT.md**
-- Copy-paste template for starting new AI sessions
+- Alternative copy-paste template for starting new AI sessions
 - Tells AI what to read and how to behave
 - Use this to onboard new AI instances
 
