@@ -9,15 +9,15 @@ Safety Notice:
     All safety-critical systems must be verified before clinical use.
 """
 
-import sys
 import logging
+import sys
 from pathlib import Path
 
 # Add src to path for imports
 sys.path.insert(0, str(Path(__file__).parent))
 
 
-def setup_logging():
+def setup_logging() -> logging.Logger:
     """
     Configure application-wide logging.
 
@@ -30,11 +30,8 @@ def setup_logging():
 
     logging.basicConfig(
         level=logging.DEBUG,
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        handlers=[
-            logging.FileHandler(log_dir / "tosca.log"),
-            logging.StreamHandler(sys.stdout)
-        ]
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        handlers=[logging.FileHandler(log_dir / "tosca.log"), logging.StreamHandler(sys.stdout)],
     )
 
     logger = logging.getLogger(__name__)
@@ -44,7 +41,7 @@ def setup_logging():
     return logger
 
 
-def main():
+def main() -> int:
     """
     Main application entry point.
 
@@ -62,16 +59,14 @@ def main():
         app.setApplicationName("TOSCA Laser Control")
         app.setOrganizationName("Aleyegn Medical Devices")
 
-        # TODO: Import and create main window
-        # from ui.main_window import MainWindow
-        # window = MainWindow()
-        # window.show()
+        logger.info("Creating main window")
+        from ui.main_window import MainWindow
 
-        logger.warning("Main window not yet implemented - placeholder mode")
-        logger.info("Application ready. Press Ctrl+C to exit.")
+        window = MainWindow()
+        window.show()
 
-        # For now, just show that the app can start
-        return_code = 0  # app.exec() when main window is ready
+        logger.info("Application ready")
+        return_code: int = app.exec()
 
         logger.info("Application shutting down normally")
         return return_code
