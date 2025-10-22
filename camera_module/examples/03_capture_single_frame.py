@@ -10,12 +10,13 @@ Default output: camera_module/output/captured_frame.png
 """
 
 import sys
+from pathlib import Path
 
 import numpy as np
 import vmbpy
 
 
-def capture_frame(camera_id: str = None, output_file: str = "captured_frame.png") -> None:
+def capture_frame(camera_id: str = None, output_file: str = None) -> None:
     """
     Capture a single frame from the camera.
 
@@ -70,7 +71,14 @@ def capture_frame(camera_id: str = None, output_file: str = "captured_frame.png"
 
 if __name__ == "__main__":
     camera_id = sys.argv[1] if len(sys.argv) > 1 else None
-    output_file = sys.argv[2] if len(sys.argv) > 2 else "camera_module/output/captured_frame.png"
+
+    if len(sys.argv) > 2:
+        output_file = sys.argv[2]
+    else:
+        script_dir = Path(__file__).parent
+        output_dir = script_dir.parent / "output"
+        output_dir.mkdir(exist_ok=True)
+        output_file = str(output_dir / "captured_frame.png")
 
     try:
         capture_frame(camera_id, output_file)
