@@ -9,12 +9,12 @@ Usage:
 """
 
 import sys
-from typing import Optional, Tuple
+from typing import Any, Optional, Tuple
 
 import vmbpy
 
 
-def get_feature_info(feature: vmbpy.Feature) -> Optional[Tuple[str, str, str, bool]]:
+def get_feature_info(feature: Any) -> Optional[Tuple[str, str, str, bool]]:
     """
     Extract information from a camera feature.
 
