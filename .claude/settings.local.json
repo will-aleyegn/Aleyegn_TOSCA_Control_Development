@@ -48,7 +48,11 @@
       "Bash(\"venv/Scripts/python.exe\" -m pip install pre-commit)",
       "Bash(\"venv/Scripts/pre-commit.exe\" install)",
       "WebFetch(domain:github.com)",
-      "Bash(\"venv/Scripts/python.exe\" -m pip install vmbpy)"
+      "Bash(\"venv/Scripts/python.exe\" -m pip install vmbpy)",
+      "Bash(\"venv/Scripts/python.exe\" camera_module/examples/01_list_cameras.py)",
+      "Bash(\"venv/Scripts/python.exe\" camera_module/examples/02_camera_info.py)",
+      "Bash(\"venv/Scripts/python.exe\" camera_module/examples/03_capture_single_frame.py)",
+      "Bash(\"venv/Scripts/python.exe\" camera_module/examples/04_explore_features.py)"
     ],
     "deny": [
       "Read(./.env*)",

@@ -6,7 +6,7 @@ Captures a single frame from the camera and saves it as a NumPy array and image 
 Usage:
     python 03_capture_single_frame.py [camera_id] [output_filename]
 
-Default output: captured_frame.png
+Default output: camera_module/output/captured_frame.png
 """
 
 import sys
@@ -70,7 +70,7 @@ def capture_frame(camera_id: str = None, output_file: str = "captured_frame.png"
 
 if __name__ == "__main__":
     camera_id = sys.argv[1] if len(sys.argv) > 1 else None
-    output_file = sys.argv[2] if len(sys.argv) > 2 else "captured_frame.png"
+    output_file = sys.argv[2] if len(sys.argv) > 2 else "camera_module/output/captured_frame.png"
 
     try:
         capture_frame(camera_id, output_file)
