@@ -168,13 +168,63 @@
   - docs/project/README.md with new location reference
   - Main README.md to highlight NEW_SESSION_GUIDE.md at top of Documentation section
 **Result:** NEW_SESSION_GUIDE.md now easily accessible in root directory
-**Next:** Commit changes
+**Commit:** 1fb9236
+**Next:** Continue camera module work
+
+#### 20. Camera Configuration and Testing
+**Time:** 17:20-17:40
+**What:** Ran complete camera test suite and fixed API issues
+**Tests Executed:**
+  1. ✓ 01_list_cameras.py - Detected Allied Vision 1800 U-158c
+  2. ✓ 02_camera_info.py - Retrieved specs (1456x1088, RGB8, 5ms exposure)
+  3. ✓ 03_capture_single_frame.py - Captured frame to camera_module/output/
+  4. ✗ 04_explore_features.py - Found 313 features but read 0
+  5. ✗ 05_continuous_stream.py - Callback signature error
+
+**Issues Discovered:**
+  - VmbPy uses is_writeable() not is_writable() (British spelling)
+  - Streaming callback requires 3 params (camera, stream, frame) not 2
+  - No StreamStats class exists in VmbPy
+
+**Actions Taken:**
+  - Created debug scripts to investigate API
+  - Fixed feature exploration script
+  - Fixed streaming script with correct callback signature
+  - Re-tested all scripts successfully
+
+**Final Results:**
+  - All 5 camera test scripts passing
+  - 223 out of 313 camera features readable
+  - Streaming at 39.4 FPS (matches expected 39.92 FPS)
+
+**Next:** Document lessons learned
+
+#### 21. Established Lessons Learned System
+**Time:** 17:40-17:50
+**What:** Created systematic approach to documenting mistakes for all modules
+**Created:** camera_module/LESSONS_LEARNED.md with 2 documented issues
+**Updated:** docs/project/CODING_STANDARDS.md with lessons learned practice
+**Purpose:** Prevent repeating API mistakes across modules and sessions
+
+**Documented Issues:**
+  - Issue #1: VmbPy is_writeable() spelling (British English)
+  - Issue #2: Streaming callback signature (3 params required)
+
+**Standard Practice Established:**
+  - Every module must have LESSONS_LEARNED.md
+  - Document API quirks, wrong assumptions, tricky bugs immediately
+  - New AI sessions read lessons learned to avoid repeating mistakes
+  - Reference lesson numbers in commit messages
+
+**Commit:** 0f91ef5
+**Result:** All camera tests passing, lessons learned system operational
+**Next:** Update work log and move to next module or task
 
 ---
 
 ## Session Summary
 
-**Total Actions:** 19 major steps completed
+**Total Actions:** 21 major steps completed
 **Time Span:** ~40 minutes of development work
 **Key Achievements:**
 1. ✓ Camera module created and tested
