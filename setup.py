@@ -1,8 +1,6 @@
 """
-TOSCA Medical Laser Control System
+TOSCA Laser Control System
 Setup configuration for package installation and distribution.
-
-This is an FDA-Enhanced Documentation Level medical device software.
 """
 
 from pathlib import Path
@@ -16,9 +14,9 @@ long_description = readme_file.read_text(encoding="utf-8") if readme_file.exists
 setup(
     name="tosca-laser-control",
     version="0.1.0-alpha",
-    author="Aleyegn Medical Devices",
+    author="Aleyegn",
     author_email="",
-    description="TOSCA Medical Laser Control System - FDA-Compliant Device Software",
+    description="TOSCA Laser Control System",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/will-aleyegn/Aleyegn_TOSCA_Control_Development",
@@ -30,8 +28,7 @@ setup(
     },
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
-        "Intended Audience :: Healthcare Industry",
-        "Topic :: Scientific/Engineering :: Medical Science Apps.",
+        "Intended Audience :: Science/Research",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",

@@ -5,16 +5,16 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "tosca-laser-control"
 version = "0.1.0-alpha"
-description = "TOSCA Medical Laser Control System - FDA-Compliant Device Software"
+description = "TOSCA Laser Control System"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "Proprietary"}
 authors = [
-    {name = "Aleyegn Medical Devices"}
+    {name = "Aleyegn"}
 ]
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
-    "Intended Audience :: Healthcare Industry",
+    "Intended Audience :: Science/Research",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",

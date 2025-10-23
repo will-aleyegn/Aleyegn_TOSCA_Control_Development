@@ -101,3 +101,12 @@ Desktop.ini
 .dmypy.json
 dmypy.json
 actuator_module/output/
+
+# AI Assistant Files (local use only, not tracked in repo)
+.claude/
+.mcp.json
+NEW_SESSION_GUIDE.md
+claude-code-tool-install.txt.txt
+docs/project/WORK_LOG.md
+docs/project/archive/
+docs/project/PROJECT_STATUS.md

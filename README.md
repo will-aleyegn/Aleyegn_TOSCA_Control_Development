@@ -1,12 +1,11 @@
-# TOSCA Medical Laser Control System
+# TOSCA Laser Control System
 
 **Project Status:** Phase 1 Complete - GUI Shell & Camera Module ✓
 **Date:** 2025-10-22
-**Application Type:** Clinical Medical Device (FDA-Enhanced Documentation Level)
 
 ## Overview
 
-This is a comprehensive medical laser control system designed for clinical use. The system integrates:
+This is a comprehensive laser control system. The system integrates:
 
 - **Laser Control** - Arroyo Instruments TEC Controller (serial communication)
 - **Linear Actuator** - Xeryon actuator for ring size control
@@ -389,15 +388,14 @@ pip install -r requirements.txt
 
 ## Safety & Compliance
 
-**CRITICAL:** This is a medical device intended for clinical use.
+**CRITICAL:** This system controls a laser and includes safety interlocks.
 
-Before deployment:
-1. **Risk Analysis** - Perform comprehensive FMEA
+Before operation:
+1. **Risk Analysis** - Perform comprehensive safety review
 2. **Safety Testing** - Document all safety system tests
 3. **Validation** - Independent safety review
-4. **Regulatory Review** - Consult with regulatory experts
-5. **User Training** - Complete operator training program
-6. **Maintenance Protocol** - Regular safety verification schedule
+4. **User Training** - Complete operator training program
+5. **Maintenance Protocol** - Regular safety verification schedule
 
 ## Development Guidelines
 
@@ -440,13 +438,13 @@ Before deployment:
 - Multi-fault scenarios
 
 ### User Acceptance Testing
-- Clinical workflow validation
+- Research workflow validation
 - Operator feedback
 - Usability assessment
 
 ## Contributing
 
-**This is a medical device project.** All contributions must:
+**This is a research system with safety-critical components.** All contributions must:
 1. Pass safety review
 2. Include comprehensive tests
 3. Not compromise any safety features
@@ -460,7 +458,6 @@ Before deployment:
 
 **Project Lead:** [To be assigned]
 **Safety Engineer:** [To be assigned]
-**Clinical Advisor:** [To be assigned]
 
 ## Acknowledgments
 
