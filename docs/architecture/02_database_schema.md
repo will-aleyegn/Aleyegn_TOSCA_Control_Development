@@ -1,4 +1,4 @@
-# Medical Laser Control System - Database Schema
+# TOSCA Laser Control System - Database Schema
 
 **Document Version:** 1.0
 **Date:** 2025-10-15

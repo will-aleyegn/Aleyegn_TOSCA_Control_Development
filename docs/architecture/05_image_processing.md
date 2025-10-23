@@ -1,4 +1,4 @@
-# Medical Laser Control System - Image Processing Pipeline
+# TOSCA Laser Control System - Image Processing Pipeline
 
 **Document Version:** 1.0
 **Date:** 2025-10-15

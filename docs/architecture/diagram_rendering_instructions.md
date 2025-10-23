@@ -91,7 +91,7 @@ mmdc -i software_block_diagram.mmd -o software_architecture.pdf
 
 ## Recommended Export Settings
 
-For FDA submission documents:
+For professional documentation:
 - **Format:** PNG or PDF
 - **Resolution:** 300 DPI minimum
 - **Size:** Full page width (6.5 inches for standard 8.5×11" with 1" margins)

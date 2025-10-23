@@ -1,14 +1,14 @@
-# Medical Laser Control System - Safety System Architecture
+# TOSCA Laser Control System - Safety System Architecture
 
 **Document Version:** 1.0
 **Date:** 2025-10-15
-**Criticality:** MAXIMUM - Medical Device Safety
+**Criticality:** MAXIMUM - Safety Critical System
 
 ## Safety Philosophy
 
 **"Fail-Safe by Default"**
 
-This medical laser system implements multiple redundant safety layers based on these principles:
+This laser system implements multiple redundant safety layers based on these principles:
 
 1. **Defense in Depth**: Multiple independent safety barriers
 2. **Fail-Safe Design**: Any component failure defaults to laser OFF
@@ -911,7 +911,7 @@ Each test logs results and must pass before system deployment.
 
 ## Regulatory & Compliance Notes
 
-**IMPORTANT:** This is a medical device. Before clinical deployment:
+**IMPORTANT:** This is a safety-critical laser system. Before deployment:
 
 1. **Risk Analysis:** Perform FMEA (Failure Mode and Effects Analysis)
 2. **Testing:** Comprehensive safety testing with documented results

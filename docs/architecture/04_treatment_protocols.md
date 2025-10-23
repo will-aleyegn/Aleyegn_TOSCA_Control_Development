@@ -1,4 +1,4 @@
-# Medical Laser Control System - Treatment Protocol Engine
+# TOSCA Laser Control System - Treatment Protocol Engine
 
 **Document Version:** 1.0
 **Date:** 2025-10-15

@@ -1,4 +1,4 @@
-# Medical Laser Control System - Architecture Overview
+# TOSCA Laser Control System - Architecture Overview
 
 **Document Version:** 1.0
 **Date:** 2025-10-15
@@ -6,11 +6,11 @@
 
 ## Executive Summary
 
-This document outlines the architecture for a medical laser control system designed for clinical use. The system integrates laser control, linear actuator positioning, GPIO-based safety interlocks, camera-based alignment, and comprehensive patient/session tracking.
+This document outlines the architecture for a laser control system. The system integrates laser control, linear actuator positioning, GPIO-based safety interlocks, camera-based alignment, and comprehensive patient/session tracking.
 
 ## System Purpose
 
-Control and monitor medical laser treatments with:
+Control and monitor laser treatments with:
 - Precise power and timing control
 - Adjustable ring size via linear actuator
 - Real-time safety monitoring via photodiode and hotspot smoothing device
