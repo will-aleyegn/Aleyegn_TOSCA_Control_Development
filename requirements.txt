@@ -1,5 +1,4 @@
-# TOSCA Medical Laser Control System - Python Dependencies
-# Project: FDA-Compliant Medical Device Software (Enhanced Documentation Level)
+# TOSCA Laser Control System - Python Dependencies
 # Python Version: 3.10+
 
 # ===================================================================

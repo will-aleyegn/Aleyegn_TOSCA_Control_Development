@@ -1,1 +1,1 @@
-"""Test suite for TOSCA Medical Laser Control System."""
+"""Test suite for TOSCA Laser Control System."""

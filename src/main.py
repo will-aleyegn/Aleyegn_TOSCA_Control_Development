@@ -1,12 +1,12 @@
 """
-TOSCA Medical Laser Control System - Main Entry Point
+TOSCA Laser Control System - Main Entry Point
 
 This is the primary entry point for the TOSCA application.
 Initializes the PyQt6 application and launches the main window.
 
 Safety Notice:
-    This is FDA-Enhanced Documentation Level medical device software.
-    All safety-critical systems must be verified before clinical use.
+    This system controls a laser and includes safety-critical systems.
+    All safety systems must be verified before operation.
 """
 
 import logging
@@ -36,7 +36,7 @@ def setup_logging() -> logging.Logger:
 
     logger = logging.getLogger(__name__)
     logger.info("=" * 60)
-    logger.info("TOSCA Medical Laser Control System Starting")
+    logger.info("TOSCA Laser Control System Starting")
     logger.info("=" * 60)
     return logger
 
@@ -57,7 +57,7 @@ def main() -> int:
         logger.info("Initializing Qt Application")
         app = QApplication(sys.argv)
         app.setApplicationName("TOSCA Laser Control")
-        app.setOrganizationName("Aleyegn Medical Devices")
+        app.setOrganizationName("Aleyegn")
 
         logger.info("Creating main window")
         from ui.main_window import MainWindow

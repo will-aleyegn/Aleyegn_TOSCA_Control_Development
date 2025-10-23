@@ -1,7 +1,7 @@
 # TOSCA Development Environment Setup Guide
 
-**Project:** TOSCA Medical Laser Control System
-**Status:** FDA-Enhanced Documentation Level Medical Device Software
+**Project:** TOSCA Laser Control System
+**Status:** Pre-Alpha Development
 **Date:** 2025-10-22
 **Python Version:** 3.10+
 
@@ -94,7 +94,7 @@ git config --global user.email "your.email@example.com"
 Created comprehensive `.gitignore` file to exclude:
 - Python artifacts (`__pycache__`, `*.pyc`, `*.egg-info`)
 - Virtual environment (`venv/`, `.venv/`)
-- Medical device data (`data/`, `*.db`, `sessions/`, `logs/`)
+- Application data (`data/`, `*.db`, `sessions/`, `logs/`)
 - Patient data (critical security requirement)
 - IDE files (`.vscode/`, `.idea/`)
 - Environment variables (`.env`, `.mcp.json`)
@@ -563,7 +563,7 @@ python src/main.py
 
 **Expected output:**
 ```
-INFO - TOSCA Medical Laser Control System Starting
+INFO - TOSCA Laser Control System Starting
 WARNING - Main window not yet implemented - placeholder mode
 INFO - Application ready. Press Ctrl+C to exit.
 ```

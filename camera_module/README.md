@@ -2,7 +2,7 @@
 
 **Camera:** Allied Vision Camera
 **API:** VmbPy 1.1.1 (Vimba X SDK Python API)
-**Purpose:** Camera control and image acquisition for TOSCA Medical Laser Control System
+**Purpose:** Camera control and image acquisition for TOSCA Laser Control System
 
 ---
 

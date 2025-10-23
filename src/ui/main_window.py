@@ -39,7 +39,7 @@ class MainWindow(QMainWindow):
 
         logger.info("Initializing main window")
 
-        self.setWindowTitle("TOSCA Medical Laser Control System")
+        self.setWindowTitle("TOSCA Laser Control System")
         self.setGeometry(100, 100, 1400, 900)
 
         self._init_ui()

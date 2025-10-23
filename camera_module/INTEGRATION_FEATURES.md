@@ -1,7 +1,7 @@
 # Camera Module - Integration Feature Specification
 
 **Module:** Camera Module (VmbPy - Allied Vision)
-**Target System:** TOSCA Medical Laser Control System
+**Target System:** TOSCA Laser Control System
 **Hardware:** Allied Vision 1800 U-158c (USB 3.0)
 **Status:** Exploration Complete, Ready for Integration
 **Last Updated:** 2025-10-22
