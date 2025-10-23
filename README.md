@@ -113,6 +113,20 @@ TOSCA-dev/
 │   │   └── 06_set_auto_exposure.py             ✓ Auto exposure control
 │   └── 📁 output/                              ✓ Test images (git-ignored)
 │
+├── 📁 actuator_module/                         ✓ Actuator Exploration Module (COMPLETE)
+│   ├── README.md                               ✓ Xeryon API documentation (500+ lines)
+│   ├── LESSONS_LEARNED.md                      ✓ API quirks documented (10 issues)
+│   ├── Xeryon.py                               ✓ Vendor library v1.88 (excluded from linting)
+│   ├── settings_default.txt                    ✓ Default stage parameters
+│   ├── 📁 examples/                            ✓ Test Scripts (ready for hardware)
+│   │   ├── 01_list_ports.py                    ✓ List available COM ports
+│   │   ├── 02_connect_actuator.py              ✓ Connect and display stage info
+│   │   ├── 03_find_index.py                    ✓ Find home position (required for positioning)
+│   │   ├── 04_absolute_positioning.py          ✓ Test setDPOS() 0-3000 µm TOSCA range
+│   │   ├── 05_relative_movement.py             ✓ Test step() incremental movement
+│   │   └── 06_speed_and_limits.py              ✓ Test SSPD speed control and HLIM/LLIM safety
+│   └── 📁 output/                              ✓ Test data (git-ignored)
+│
 ├── 📁 docs/                                    ⏳ Documentation
 │   │
 │   ├── 📁 architecture/                        ✓ Technical Architecture (COMPLETE)
@@ -220,6 +234,7 @@ TOSCA-dev/
 
 ### ✓ Complete (Ready for Integration)
 - Camera module: 6 test scripts, all passing (39.4 FPS)
+- Actuator module: 6 test scripts ready for hardware (0-3000 µm range)
 - GUI shell: 4-tab interface with all widgets
 - Documentation: Architecture specs, coding standards, work logs
 - Configuration: Pre-commit hooks, linting, type checking
