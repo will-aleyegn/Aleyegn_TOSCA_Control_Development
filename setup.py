@@ -5,8 +5,9 @@ Setup configuration for package installation and distribution.
 This is an FDA-Enhanced Documentation Level medical device software.
 """
 
-from setuptools import setup, find_packages
 from pathlib import Path
+
+from setuptools import find_packages, setup
 
 # Read the README file
 readme_file = Path(__file__).parent / "README.md"
@@ -22,8 +23,10 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/will-aleyegn/Aleyegn_TOSCA_Control_Development",
     project_urls={
-        "Bug Tracker": "https://github.com/will-aleyegn/Aleyegn_TOSCA_Control_Development/issues",
-        "Documentation": "https://github.com/will-aleyegn/Aleyegn_TOSCA_Control_Development/tree/main/docs",
+        "Bug Tracker": ("https://github.com/will-aleyegn/Aleyegn_TOSCA_Control_Development/issues"),
+        "Documentation": (
+            "https://github.com/will-aleyegn/Aleyegn_TOSCA_Control_Development/tree/main/docs"
+        ),
     },
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",

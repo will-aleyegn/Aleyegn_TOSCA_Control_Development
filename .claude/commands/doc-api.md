@@ -36,7 +36,7 @@ Generate comprehensive API documentation with interactive features: $ARGUMENTS
      - **API Blueprint**: Markdown-based API documentation
 
 3. **API Specification Generation**
-   
+
    **For REST APIs with OpenAPI:**
    ```yaml
    openapi: 3.0.0
@@ -109,7 +109,7 @@ Generate comprehensive API documentation with interactive features: $ARGUMENTS
    - Include rate limiting and throttling information
 
 9. **Interactive Documentation Setup**
-   
+
    **Swagger UI Integration:**
    ```html
    <!DOCTYPE html>
@@ -140,12 +140,12 @@ Generate comprehensive API documentation with interactive features: $ARGUMENTS
       - **C#**: XML documentation comments
 
 11. **Automated Documentation Generation**
-    
+
     **For Node.js/Express:**
     ```javascript
     const swaggerJsdoc = require('swagger-jsdoc');
     const swaggerUi = require('swagger-ui-express');
-    
+
     const options = {
       definition: {
         openapi: '3.0.0',
@@ -156,7 +156,7 @@ Generate comprehensive API documentation with interactive features: $ARGUMENTS
       },
       apis: ['./routes/*.js'],
     };
-    
+
     const specs = swaggerJsdoc(options);
     app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
     ```
@@ -228,7 +228,7 @@ async def get_user(user_id: int):
 @RestController
 @Api(tags = "Users")
 public class UserController {
-    
+
     @GetMapping("/users/{id}")
     @ApiOperation(value = "Get user by ID")
     public ResponseEntity<User> getUser(

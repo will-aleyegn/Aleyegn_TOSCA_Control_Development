@@ -249,8 +249,8 @@ Your core expertise areas:
 import React, { memo, useCallback, useMemo } from 'react';
 
 const OptimizedComponent = memo(({ data, onAction }) => {
-  const processedData = useMemo(() => 
-    data.map(item => ({ ...item, processed: true })), 
+  const processedData = useMemo(() =>
+    data.map(item => ({ ...item, processed: true })),
     [data]
   );
 
